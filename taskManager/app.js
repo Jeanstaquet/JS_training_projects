@@ -1,5 +1,7 @@
 // Define UI Vars
-form = document.querySelector('.add');
+const form = document.querySelector('.add');
+const rmv = document.querySelector('.rmv');
+const bbdy = document.querySelector("body");
 
 form.addEventListener("click", addTask);
 
@@ -15,6 +17,23 @@ function addTask(e){
     e.preventDefault();
 };
 
+rmv.addEventListener("click", rmvtask);
+
+function rmvtask(e){
+    const lis = document.querySelectorAll('li');
+    lis[0].remove()
+};
+
+
+bbdy.addEventListener('mousemove', coord);
+
+function coord(e){
+    const xcoord = e.clientX;
+    const ycoord = e.clientY;
+    document.querySelector('h2').innerText = `MouseX:${xcoord}  MouseY:${xcoord}`;
+
+    document.querySelector('body').style.color = `rgb(${xcoord}, ${xcoord}, 75)`;
+};
 
 
 
@@ -23,25 +42,3 @@ function addTask(e){
 
 
 
-
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-
-//     document.querySelector('#new-task').onsubmit = () => {
-
-//         // Create new item for list
-//         const li = document.createElement('li');
-//         li.innerHTML = document.querySelector('#task').value;
-
-//         // Add new item to task list
-//         document.querySelector('#tasks').append(li);
-
-//         // Clear input field
-//         document.querySelector('#task').value = '';
-
-//         // Stop form from submitting
-//         return false;
-//     };
-
-// });
