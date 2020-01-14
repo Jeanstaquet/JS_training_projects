@@ -15,10 +15,19 @@
         <option value="-">Minus</option>
         <option value="/">Divide</option>
         <option value="*">Multiply</option>
+        <option value="^">Exposant</option>
 
     </select>
-    <button type="button">Calculate</button>
+    <button type="button" id="but1">Calculate</button>
+    <button type="button" id="but2">Reset</button>
     <div id="result"></div>
+    <div id="history">
+        <h5>History of your calculations:</h5>
+        <ul id="history-list">
+
+        </ul>
+        <button type="button" id="but3">Delete your history</button>
+    </div>
     
 </body>
 <script src="app.js"></script>
