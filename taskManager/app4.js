@@ -50,3 +50,4 @@ function coord(e){
     document.querySelector('body').style.color = `rgb(${xcoord}, ${xcoord}, 75)`;
 };
 
+//ALL is ok
