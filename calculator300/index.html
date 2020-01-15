@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <style>
+        #loading {
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div class="error-msg"></div>
+    Value 1: <input type="text" id="value1">
+    Value 2: <input type="text" id="value2"> 
+    Operator:
+    <select id="operator">
+        <option value="+">Add</option>
+        <option value="-">Minus</option>
+        <option value="/">Divide</option>
+        <option value="*">Multiply</option>
+        <option value="^">Exposant</option>
+
+    </select>
+    <button type="button" id="but1">Calculate</button>
+    <button type="button" id="but2">Reset</button>
+    <div id="result"></div>
+    <div id="loading">
+        <img src="img/loading.gif" alt="">
+    </div>
+    <div id="history">
+        <h5>History of your calculations:</h5>
+        <ul id="history-list">
+
+        </ul>
+        <button type="button" id="but3">Delete your history</button>
+    </div>
+    
+</body>
+<script src="app.js"></script>
+</html>
