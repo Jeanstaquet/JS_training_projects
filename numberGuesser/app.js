@@ -62,19 +62,20 @@ function playerTry(e){
         trow.appendChild(td);
         document.querySelector("#table-content").appendChild(trow);
         storeCalInLocalStorage(td.innerHTML);
-
+        document.querySelector("#guess-input").value = "";
         (function() {
             setTimeout(newGame, 1000);
         })();
         
     };
-    document.querySelector("#guess-input").value = "";
+    
     //e.preventDefault();
 };
 
 
 function newGame(){
     if (confirm("New Game ?")) {
+        document.querySelector(".message").style.color = "black";
         document.querySelector("#guess-input").style.borderColor = "gray";
         document.querySelector("#guess-input").disabled = false;
         life = 3;
@@ -87,8 +88,9 @@ function newGame(){
 
 function loose(){
     if (life === 0){
-        document.querySelector(".message").innerHTML = `You have ${life} live, you lost !!`;
+        document.querySelector(".message").innerHTML = `You have ${life} live, you lost !! The correct number was ${num1}`;
         document.querySelector("#guess-input").remove();
+        
 
     }
 }
