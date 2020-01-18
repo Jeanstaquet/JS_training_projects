@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Battle Game</title>
+<style>
+#ttl {
+    color: red;
+}
+
+.txt{
+    height:50px;
+    width:400px;
+}
+
+input[type=button]{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+    <h1>Create two armies and lets fight</h1>
+    <input type="number" id="numbertroops1">
+    <select name="Army1" id="troops-type">
+        <option value="knight">Knight</option>
+        <option value="archer">Archer</option>
+        <option value="cavalry">cavalry</option>
+        <option value="god">God</option>
+    </select>
+    <input type="button" id="add-army1" value="Add to your army">
+</br>
+<input type="number" id="numbertroops2">
+<select name="Army2" id="troops-type2">
+    <option value="knight">Knight</option>
+    <option value="archer">Archer</option>
+    <option value="cavalry">cavalry</option>
+    <option value="god">God</option>
+</select>
+<input type="button" id="add-army2" value="Add to the opponent's army">
+</br>
+<textarea id="p1" class="txt"></textarea>
+<textarea id="p2" class="txt"></textarea>
+</br>
+</body>
+<script src="app.js"></script>
+</html>
