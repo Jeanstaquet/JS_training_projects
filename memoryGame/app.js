@@ -3,8 +3,9 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-
+let count = 0;
 function flipCard() {
+  comptage()
   if (lockBoard) return;
   if (this === firstCard) return;
 
@@ -58,3 +59,8 @@ function resetBoard() {
 })();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
+
+function comptage() {
+  count++;
+  document.querySelector("h1").innerText = `Number of try: ${count}`;
+}
