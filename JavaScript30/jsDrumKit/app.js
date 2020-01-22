@@ -17,4 +17,4 @@ function removeTransition(e) {
     if (e.propertyName !== "transform") return; //quand la transformation à eu lieu le pN passe à transform
     //this est égale au div avec la class playing
     this.classList.remove("playing");
-}
+};
