@@ -6,7 +6,7 @@ const ope = document.querySelector("#operator")
 loadEventlistenners();
 
 function loadEventlistenners(){
-    document.addEventListener('DOMContentLoaded', getCalculus)
+    document.addEventListener('DOMContentLoaded', getCalculus);
     document.querySelector('#but1').addEventListener('click', function (e) {
         document.querySelector("#result").style.display = "none";
         document.querySelector("#loading").style.display = "block";
