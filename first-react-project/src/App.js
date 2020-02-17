@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Validation from "./Validation/Validation";
 import './App.css';
+import Char from "./Char/Char"
 
 class App extends Component{
   state = {
@@ -12,18 +13,32 @@ class App extends Component{
     this.setState({userInput:a});
   }
 
+  deleteCharHandler = (index) => {
+    //converti en array
+    const text = this.state.userInput.split("");
+    //coupe cet array à la pos déclarée
+    text.splice(index, 1)
+    //Nous remmetons sous forme de string
+    const updateText = text.join("");
+    this.setState({userInput:updateText})
+
+  }
   render() {
+    const charList = this.state.userInput.split("").map((char, index) => {
+      return <Char character={char} key={index} clicked={() => this.deleteCharHandler(index)}/>
+    });
   return (
     <div className="App">
       <h1>This is my first React Project: Conditionnals and list</h1>
       <form>
         <label>
          Nom :
-          <input type="text" name="name" onChange={this.inputChangedHandler} autocomplete="off"/>
+          <input type="text" name="name" onChange={this.inputChangedHandler} value={this.state.userInput}/>
         </label>
           <input type="submit" value="Envoyer" />
       </form>
       <Validation textLength={this.state.userInput}/>
+      {charList}
     </div>
   );
   }
