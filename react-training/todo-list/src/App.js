@@ -1,17 +1,34 @@
 import React, {Component} from 'react';
 import './App.css';
+import Output from "./Output/Output"
 
 class App extends Component {
   state = {
-    changeColor: false
+    changeColor: false,
+    ouputList: "",
+    listItem: []
   };
 
   changeColorHandling = (e) => {
     const doeschange = this.state.changeColor;
     this.setState({changeColor:!doeschange});
-    console.log(this.state.changeColor);
-    e.preventDefault()
+    e.preventDefault();
+    const newList = [...this.state.listItem, this.state.ouputList]
+    console.log(newList)
+    this.setState({ouputList:"",
+                  listItem:newList})
+  };
+
+  changeHandler = (e) => {
+    console.log(e.target.value)
+    this.setState({ouputList:e.target.value})
   }
+  
+  deleteHandler = (index) => {
+    const arr = [...this.state.listItem]
+    arr.splice(index, 1);
+    this.setState({listItem:arr})
+  }; 
   render() {
     const styleBasic= {
       padding: "8px",
@@ -37,13 +54,11 @@ class App extends Component {
         <form style={styleBasic}>
           <label>
             Add an item to the list:
-            <input type="text" name="name" id="input"/>
+            <input type="text" onChange={(e) => this.changeHandler(e)} value={this.state.ouputList}/>
           </label>
           <inputs type="submit" value="Submit" style={styleButton} onClick={(e) => this.changeColorHandling(e)}/>
         </form>
-        <p>
-          
-        </p>
+        <Output items={this.state.listItem} click={(index) => this.deleteHandler(index)}/>
       </div>
     );
   }
