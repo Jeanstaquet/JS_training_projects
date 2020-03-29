@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Validation from "./Validation/Validation";
 import './App.css';
-import Char from "./Char/Char"
+import Char from "./Char/Char";
+import styled from "styled-components";
 
 class App extends Component{
   state = {
