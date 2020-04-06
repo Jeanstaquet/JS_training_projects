@@ -5,7 +5,7 @@ import './FullPost.css';
 
 class FullPost extends Component {
     state = {
-        loadedPost: null
+        loadedPost: null,
     }
 
     componentDidUpdate () {
@@ -25,7 +25,8 @@ class FullPost extends Component {
             .then(response => {
                 console.log(response)
             })
-    }
+    };
+
     render () {
         let post = <p style={{textAlign: "center"}}>Please select a Post!</p>;
         if (this.props.id) {
