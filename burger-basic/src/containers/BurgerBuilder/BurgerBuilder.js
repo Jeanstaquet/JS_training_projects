@@ -6,6 +6,7 @@ import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
 import axios from "../../axios-orders";
 import Spinner from "../../components/UI/Spinner/Spinner";
+import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 
 const INGREDIENT_PRICES = {
     salad: 0.5,
@@ -27,6 +28,11 @@ class BurgerBuilder extends Component {
         purchasing: false,
         loading: false
     };
+
+    componentDidMount () {
+        //ne pas oublier le JSON à la fin de l'url
+        axios.get()
+    }
 
     updatePurchaseState (ingredients) {
         const sum = Object.keys(ingredients)
@@ -132,4 +138,4 @@ class BurgerBuilder extends Component {
     };
 };
 
-export default BurgerBuilder;
+export default withErrorHandler(BurgerBuilder, axios);
